@@ -1,0 +1,92 @@
+@font-face
+  font-family: 'SF-Hollywood-Hills'
+  src: url('../fonts/SF-Hollywood-Hills.ttf.eot')
+  src: url('../fonts/SF-Hollywood-Hills.ttf.eot?#iefix') format('embedded-opentype'), url('../fonts/SF-Hollywood-Hills.ttf.woff') format('woff'), url('../fonts/SF-Hollywood-Hills.ttf.svg#SF-Hollywood-Hills') format('svg')
+  font-weight: 2em
+  font-style: normal
+  font-stretch: normal
+
+@font-face
+  font-family: 'scriptina'
+  src: url('../fonts/scriptin-webfont.eot')
+  src: url('../fonts/scriptin-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/scriptin-webfont.woff') format('woff'), url('../fonts/scriptin-webfont.ttf') format('truetype'), url('../fonts/scriptin-webfont.svg#scriptinaregular') format('svg')
+  font-weight: normal
+  font-style: normal
+
+
+
+body, html /// take all available height
+  height: 100%
+  min-width: 1000px
+  padding: 0
+  margin: 0
+
+.page
+  min-height: 100%
+  background-size: cover
+  width: 100%
+  background: #000000 url("../img/cinema.jpg") center fixed
+  background-size: cover
+  position: relative
+
+  .logo
+    font-family: 'scriptina'
+    position: absolute
+    right: 14%
+    top: 200px
+    font-size: 50px
+    color: black
+    //text-shadow: 0 0 2px black
+    span
+      position: relative
+      top: -28px
+      left: 120px
+
+.infolink
+  text-align: center
+
+  a
+    font-size: 35px
+    font-family: 'SF-Hollywood-Hills'
+    color: darkred
+    text-decoration: none
+    //text-shadow: 0 0 5px black
+
+
+.navbar
+  text-align: right
+  padding: 2.5% 40px
+  display: block
+  background-color: #000000
+  margin-bottom: 50px
+  li
+    font-size: 35px
+    font-family: 'SF-Hollywood-Hills'
+    display: inline-block
+    margin: 0 10px
+    color: #f5f5f5
+    &::first-letter
+      font-size: 50px
+      color: darkred
+
+    a
+      color: #f5f5f5
+      text-decoration: none
+
+figure
+  margin: 0
+  display: block
+  text-align: center
+  position: relative
+
+  //img
+  //  width: 100%
+
+  figcaption
+    text-align: center
+    position: relative
+    bottom: 125px
+    font-family: 'SF-Hollywood-Hills'
+    color: #f5f5f5
+    text-shadow: 0 0 5px black
+    font-size: 37px
