@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html ng-app="page">
+<head lang="de">
+    <meta charset="UTF-8">
+    <title>SwingSchlampen</title>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <!--<script type="text/javascript" src="bower_components/ngRange/dist/ngRange.js"></script>-->
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:400,500italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Parisienne|Mr+De+Haviland|Clicker+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+<div class="container-fluid page">
+    <div class="navbar">
+        <ul role="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="band.html">Band</a></li>
+            <!--<li class="flyout">-->
+            <!--Media-->
+            <!--<ul>-->
+            <!--<li><a href="fotos.html">Fotos</a></li>-->
+            <!--&lt;!&ndash;<li>Videos</li>&ndash;&gt;-->
+            <!--</ul>-->
+            <!--</li>-->
+            <li><a href="termine.html">Termine</a></li>
+            <!--<li><a href="shop.html">Shop</a></li>-->
+            <!--<li><a href="kontakt.html">Kontakt</a></li>-->
+            <li><a href="presse.html">Presse</a></li>
+        </ul>
+    </div>
+
+    <div class="shop">
+        <div class="header">
+            <span>T-Shirts</span>
+        </div>
+        <div class="caption">jetzt bestellen</div>
+
+        <div class="form" ng-controller="storeCtrl">
+            <form name="shirtForm" novalidate role="form">
+                Lieferadresse:<br/>
+                <div class="line">
+                    <span class="label label-danger break" ng-show="submitted && shirtForm.name.$error.required">erforderlich!</span>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" ng-model="fields.name" required/>
+                </div>
+                <div class="line">
+                    <span class="label label-danger break" ng-show="submitted && shirtForm.street.$error.required">erforderlich!</span>
+                    <label for="street">Straße</label>
+                    <input type="text" id="street" name="street" ng-model="fields.street" required/>
+                </div>
+                <div class="line">
+                    <div>
+                        <span class="label label-danger" ng-show="submitted && shirtForm.zip_code.$error.required">PLZ erforderlich!</span>
+                        <span class="label label-danger break" ng-show="submitted && shirtForm.city.$error.required">Ort erforderlich!</span>
+                    </div>
+                    <label for="zip_code">PLZ</label>
+                    <input type="text" id="zip_code" name="zip_code" ng-model="fields.zip_code" required/>
+                    <label for="city">Ort</label>
+                    <input type="text" id="city" name="city" ng-model="fields.city" required/>
+                </div>
+                <div class="line">
+                    <span class="label label-danger break" ng-show="submitted && shirtForm.email.$error.required">erforderlich!</span>
+                    <span class="label label-danger break" ng-show="submitted && shirtForm.$error.email">ungültige Adresse!</span>
+                    <label for="email">eMail</label>
+                    <input type="email" id="email" name="email" ng-model="fields.email" required/>
+                </div>
+                Als Geschenk
+                <input type="checkbox" id="checkbox-gift" class="regular-checkbox" ng-model="fields.gift"/>
+                <label for="checkbox-gift"></label><br/>
+                <br/>
+                Größe:
+                <span class="label label-danger break" ng-show="submitted && shirtForm.sex.$error.required">erforderlich!</span>
+                Unisex <input type="radio" name="sex" value="unisex" class="regular-checkbox" id="unisex" required ng-model="fields.sex"/>
+                <label for="unisex"></label>
+                Lady <input type="radio" name="sex" value="lady" class="regular-checkbox" id="lady" required ng-model="fields.sex"/>
+                <label for="lady"></label> <br/>
+                <br/>
+                Motive: <br/>
+                <div class="shirts">
+                    <div class="shirt" ng-repeat="shirt in shirts">
+                        <img src="img/{{shirt}}.jpg" alt=""/>
+                        <label>{{$index + 1}}</label>
+                        <input type="number" name="{{shirt}}" ng-model="fields[shirt]"/>
+                    </div>
+                </div>
+
+                <div id="messages" class="alert alert-success" ng-show="messages" ng-bind="messages"></div>
+                <button ng-click="submit(shirtForm)" class="btn btn-default">Bestellen</button>
+
+                <div style="clear: both"></div>
+
+                Text für: es kann ein bisschen dauern ..
+
+            </form>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "swingschlampen.de",
+  "version": "0.0.0",
+  "description": "SwingSchlampen Homeoage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kakulukia/swingschlampen.de.git"
+  },
+  "author": "andy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kakulukia/swingschlampen.de/issues"
+  },
+  "homepage": "https://github.com/kakulukia/swingschlampen.de",
+  "dependencies": {
+    "body-parser": "^1.7.0"
+  }
+}

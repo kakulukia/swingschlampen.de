@@ -16,7 +16,6 @@
 body, html {
   height: 100%;
   min-width: 1000px;
-  padding: 0;
   margin: 0; }
 
 .page {
@@ -25,7 +24,8 @@ body, html {
   width: 100%;
   background: black url("../img/cinema.jpg") center fixed;
   background-size: cover;
-  position: relative; }
+  position: relative;
+  padding: 0 0 100px 0; }
   .page .logo {
     font-family: "scriptina";
     position: absolute;
@@ -70,6 +70,10 @@ figure {
   display: block;
   text-align: center;
   position: relative; }
+  figure img {
+    border: 20px solid #0a0a0a;
+    background-color: whitesmoke;
+    padding: 4px; }
   figure figcaption {
     text-align: center;
     position: relative;
@@ -78,3 +82,165 @@ figure {
     color: whitesmoke;
     text-shadow: 0 0 5px black;
     font-size: 37px; }
+
+.news, .termine {
+  margin: 50px;
+  padding: 20px;
+  background-color: rgba(76, 29, 17, 0.4);
+  color: floralwhite;
+  font-family: "Exo 2", sans-serif;
+  position: relative; }
+  .news h2, .termine h2 {
+    font-size: 35px;
+    font-family: "SF-Hollywood-Hills";
+    color: whitesmoke;
+    margin-top: 0; }
+  .news label, .termine label {
+    width: 150px;
+    display: inline-block;
+    border-right: 2px solid darkred;
+    margin-right: 10px;
+    font-family: "Mr De Haviland", cursive; }
+
+.termine h2 {
+  margin-top: 50px; }
+
+.shop {
+  width: 533px;
+  margin: 0 auto;
+  background-color: white;
+  font-family: "Clicker Script", cursive;
+  color: #001839;
+  font-size: 40px; }
+  .shop .header {
+    position: relative;
+    background: url("../img/shop-header.png");
+    width: 533px;
+    height: 401px; }
+    .shop .header span {
+      position: absolute;
+      bottom: 0;
+      right: 20px;
+      font-size: 60px; }
+  .shop .caption {
+    background-color: #001839;
+    color: white;
+    text-align: right;
+    padding: 0px 20px 3px; }
+  .shop .form {
+    padding: 20px; }
+    .shop .form input {
+      border: 0;
+      font-family: "Exo 2", sans-serif;
+      font-size: 30px; }
+    .shop .form #zip_code {
+      width: 90px; }
+    .shop .form #city {
+      width: 214px; }
+    .shop .form .line {
+      padding-bottom: 5px;
+      background: url("../img/input-line.png") repeat-x bottom; }
+      .shop .form .line label {
+        display: inline-block;
+        width: 81px; }
+      .shop .form .line span.label {
+        font-family: "Exo 2", sans-serif;
+        font-size: 14px;
+        border-radius: 0; }
+        .shop .form .line span.label.break:after {
+          content: "\A";
+          white-space: pre; }
+    .shop .form .shirt {
+      position: relative;
+      display: inline-block;
+      width: 220px;
+      margin-right: 25px;
+      text-align: center; }
+      .shop .form .shirt label {
+        position: absolute;
+        top: 5px;
+        left: 15px; }
+      .shop .form .shirt input {
+        border: 3px solid #001839;
+        position: absolute;
+        top: 5px;
+        right: 0px;
+        width: 50px; }
+    .shop .form button {
+      background: #001839;
+      border: none;
+      border-radius: 7px;
+      padding: 10px 30px;
+      color: white;
+      font-family: inherit;
+      font-size: 30px;
+      float: right;
+      cursor: pointer; }
+
+li.flyout {
+  position: relative; }
+  li.flyout ul {
+    display: none; }
+  li.flyout:hover ul {
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 17px;
+    background-color: black;
+    padding: 0;
+    border: 3px solid white; }
+
+label {
+  display: inline; }
+
+.regular-checkbox {
+  display: none; }
+
+.regular-checkbox + label {
+  background-color: #001839;
+  border: 1px solid #001839;
+  padding: 9px;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative; }
+
+.regular-checkbox + label:active, .regular-checkbox:checked + label:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1); }
+
+.regular-checkbox:checked + label {
+  background-color: #001839;
+  border: 1px solid #001839;
+  color: #99a1a7; }
+
+.regular-checkbox:checked + label:after {
+  content: "\2714";
+  font-size: 14px;
+  position: absolute;
+  top: 0px;
+  left: 3px;
+  color: white; }
+
+.big-checkbox + label {
+  padding: 18px; }
+
+.big-checkbox:checked + label:after {
+  font-size: 28px;
+  left: 6px; }
+
+.tag {
+  font-family: Arial, sans-serif;
+  width: 200px;
+  position: relative;
+  top: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+  float: left; }
+
+.regular-checkbox + label {
+  background-color: #001839;
+  border: 1px solid #001839;
+  padding: 9px;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative; }
