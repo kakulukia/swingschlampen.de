@@ -24,7 +24,7 @@ body, html /// take all available height
   min-height: 100%
   background-size: cover
   width: 100%
-  background: #000000 url("../img/cinema.jpg") center fixed
+  background: #000000 url("../img/gato_flugzeug_webshop.jpg") center fixed
   background-size: cover
   position: relative
   padding: 0 0 100px 0
@@ -53,25 +53,25 @@ body, html /// take all available height
     //text-shadow: 0 0 5px black
 
 
-.navbar
+ul.nav-tabs
   text-align: right
   padding: 2.5% 40px
   display: block
   background-color: #000000
   margin-bottom: 50px
+  margin-top: 0
   li
     font-size: 35px
     font-family: 'SF-Hollywood-Hills'
     display: inline-block
     margin: 0 10px
-    color: #f5f5f5
-    &::first-letter
-      font-size: 50px
-      color: darkred
-
     a
       color: #f5f5f5
       text-decoration: none
+    &:first-letter
+      font-size: 50px
+      color: darkred
+
 
 figure
   margin: 0
@@ -168,13 +168,13 @@ figure
         display: inline-block
         width: 81px
 
-      span.label
-        font-family: 'Exo 2', sans-serif
-        font-size: 14px
-        border-radius: 0
-        &.break:after
-          content: "\A"
-          white-space: pre
+    span.label.label-danger
+      font-family: 'Exo 2', sans-serif
+      font-size: 14px
+      border-radius: 0
+      &.break:after
+        content: "\A"
+        white-space: pre
 
 
 

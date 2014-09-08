@@ -22,7 +22,7 @@ body, html {
   min-height: 100%;
   background-size: cover;
   width: 100%;
-  background: black url("../img/cinema.jpg") center fixed;
+  background: black url("../img/gato_flugzeug_webshop.jpg") center fixed;
   background-size: cover;
   position: relative;
   padding: 0 0 100px 0; }
@@ -46,24 +46,24 @@ body, html {
     color: darkred;
     text-decoration: none; }
 
-.navbar {
+ul.nav-tabs {
   text-align: right;
   padding: 2.5% 40px;
   display: block;
   background-color: black;
-  margin-bottom: 50px; }
-  .navbar li {
+  margin-bottom: 50px;
+  margin-top: 0; }
+  ul.nav-tabs li {
     font-size: 35px;
     font-family: "SF-Hollywood-Hills";
     display: inline-block;
-    margin: 0 10px;
-    color: whitesmoke; }
-    .navbar li::first-letter {
-      font-size: 50px;
-      color: darkred; }
-    .navbar li a {
+    margin: 0 10px; }
+    ul.nav-tabs li a {
       color: whitesmoke;
       text-decoration: none; }
+    ul.nav-tabs li:first-letter {
+      font-size: 50px;
+      color: darkred; }
 
 figure {
   margin: 0;
@@ -143,13 +143,13 @@ figure {
       .shop .form .line label {
         display: inline-block;
         width: 81px; }
-      .shop .form .line span.label {
-        font-family: "Exo 2", sans-serif;
-        font-size: 14px;
-        border-radius: 0; }
-        .shop .form .line span.label.break:after {
-          content: "\A";
-          white-space: pre; }
+    .shop .form span.label.label-danger {
+      font-family: "Exo 2", sans-serif;
+      font-size: 14px;
+      border-radius: 0; }
+      .shop .form span.label.label-danger.break:after {
+        content: "\A";
+        white-space: pre; }
     .shop .form .shirt {
       position: relative;
       display: inline-block;
