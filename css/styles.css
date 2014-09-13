@@ -1,15 +1,15 @@
 @font-face {
   font-family: "SF-Hollywood-Hills";
-  src: url("../fonts/SF-Hollywood-Hills.ttf.eot");
-  src: url("../fonts/SF-Hollywood-Hills.ttf.eot?#iefix") format("embedded-opentype"), url("../fonts/SF-Hollywood-Hills.ttf.woff") format("woff"), url("../fonts/SF-Hollywood-Hills.ttf.svg#SF-Hollywood-Hills") format("svg");
+  src: url("/fonts/SF-Hollywood-Hills.ttf.eot");
+  src: url("/fonts/SF-Hollywood-Hills.ttf.eot?#iefix") format("embedded-opentype"), url("../fonts/SF-Hollywood-Hills.ttf.woff") format("woff"), url("../fonts/SF-Hollywood-Hills.ttf.svg#SF-Hollywood-Hills") format("svg");
   font-weight: 2em;
   font-style: normal;
   font-stretch: normal; }
 
 @font-face {
   font-family: "scriptina";
-  src: url("../fonts/scriptin-webfont.eot");
-  src: url("../fonts/scriptin-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/scriptin-webfont.woff") format("woff"), url("../fonts/scriptin-webfont.ttf") format("truetype"), url("../fonts/scriptin-webfont.svg#scriptinaregular") format("svg");
+  src: url("/fonts/scriptin-webfont.eot");
+  src: url("/fonts/scriptin-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/scriptin-webfont.woff") format("woff"), url("../fonts/scriptin-webfont.ttf") format("truetype"), url("../fonts/scriptin-webfont.svg#scriptinaregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -22,14 +22,14 @@ body, html {
   min-height: 100%;
   background-size: cover;
   width: 100%;
-  background: black url("../img/gato_flugzeug_webshop.jpg") center fixed;
+  background: black url("/img/gato_flugzeug_webshop.jpg") center fixed;
   background-size: cover;
   position: relative;
   padding: 0 0 100px 0; }
   .page .logo {
     font-family: "scriptina";
     position: absolute;
-    right: 14%;
+    right: 10%;
     top: 200px;
     font-size: 50px;
     color: black; }
@@ -46,22 +46,21 @@ body, html {
     color: darkred;
     text-decoration: none; }
 
-ul.nav-tabs {
+ul.navtabs {
   text-align: right;
   padding: 2.5% 40px;
   display: block;
   background-color: black;
-  margin-bottom: 50px;
-  margin-top: 0; }
-  ul.nav-tabs li {
+  margin: 0 0 50px 0; }
+  ul.navtabs li {
     font-size: 35px;
     font-family: "SF-Hollywood-Hills";
     display: inline-block;
     margin: 0 10px; }
-    ul.nav-tabs li a {
+    ul.navtabs li a {
       color: whitesmoke;
       text-decoration: none; }
-    ul.nav-tabs li:first-letter {
+    ul.navtabs li:first-letter {
       font-size: 50px;
       color: darkred; }
 
@@ -83,19 +82,19 @@ figure {
     text-shadow: 0 0 5px black;
     font-size: 37px; }
 
-.news, .termine {
+.background-box {
   margin: 50px;
   padding: 20px;
   background-color: rgba(76, 29, 17, 0.4);
   color: floralwhite;
   font-family: "Exo 2", sans-serif;
   position: relative; }
-  .news h2, .termine h2 {
+  .background-box h2 {
     font-size: 35px;
     font-family: "SF-Hollywood-Hills";
     color: whitesmoke;
     margin-top: 0; }
-  .news label, .termine label {
+  .background-box label {
     width: 150px;
     display: inline-block;
     border-right: 2px solid darkred;
@@ -114,7 +113,7 @@ figure {
   font-size: 40px; }
   .shop .header {
     position: relative;
-    background: url("../img/shop-header.png");
+    background: url("/img/shop-header.png");
     width: 533px;
     height: 401px; }
     .shop .header span {
@@ -139,34 +138,35 @@ figure {
       width: 214px; }
     .shop .form .line {
       padding-bottom: 5px;
-      background: url("../img/input-line.png") repeat-x bottom; }
+      background: url("/img/input-line.png") repeat-x bottom; }
       .shop .form .line label {
         display: inline-block;
         width: 81px; }
-    .shop .form span.label.label-danger {
-      font-family: "Exo 2", sans-serif;
-      font-size: 14px;
-      border-radius: 0; }
-      .shop .form span.label.label-danger.break:after {
-        content: "\A";
-        white-space: pre; }
-    .shop .form .shirt {
+
+span.label.label-danger {
+  font-family: "Exo 2", sans-serif;
+  font-size: 14px;
+  border-radius: 0; }
+  span.label.label-danger.break:after {
+    content: "\A";
+    white-space: pre; }
+    span.label.label-danger.break:after .shirt {
       position: relative;
       display: inline-block;
       width: 220px;
       margin-right: 25px;
       text-align: center; }
-      .shop .form .shirt label {
+      span.label.label-danger.break:after .shirt label {
         position: absolute;
         top: 5px;
         left: 15px; }
-      .shop .form .shirt input {
+      span.label.label-danger.break:after .shirt input {
         border: 3px solid #001839;
         position: absolute;
         top: 5px;
         right: 0px;
         width: 50px; }
-    .shop .form button {
+    span.label.label-danger.break:after button {
       background: #001839;
       border: none;
       border-radius: 7px;

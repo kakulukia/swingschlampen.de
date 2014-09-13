@@ -30,14 +30,14 @@ app.use(express.static(__dirname + '/'));
 
 
 app.post('/send-mail', function(req, res) {
-    console.log(req.body);
+    console.log(req.body.message);
 
     // setup e-mail data with unicode symbols
     var mailOptions = {
         from: 'SwingSchlampen.de <andy@freilandkiwis.de>', // sender address
         to: 'andy@freilandkiwis.de', // list of receivers
-        subject: 'Bestellung',
-        text: JSON.stringify(req.body)
+        subject: req.body.subject,
+        text: req.body.message
     };
 
     // send mail with defined transport object
@@ -48,6 +48,8 @@ app.post('/send-mail', function(req, res) {
             console.log('Message sent: ' + info.response);
         }
     });
+
+    res.send('done!');
 });
 
 

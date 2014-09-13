@@ -1,15 +1,15 @@
 @font-face
   font-family: 'SF-Hollywood-Hills'
-  src: url('../fonts/SF-Hollywood-Hills.ttf.eot')
-  src: url('../fonts/SF-Hollywood-Hills.ttf.eot?#iefix') format('embedded-opentype'), url('../fonts/SF-Hollywood-Hills.ttf.woff') format('woff'), url('../fonts/SF-Hollywood-Hills.ttf.svg#SF-Hollywood-Hills') format('svg')
+  src: url('/fonts/SF-Hollywood-Hills.ttf.eot')
+  src: url('/fonts/SF-Hollywood-Hills.ttf.eot?#iefix') format('embedded-opentype'), url('../fonts/SF-Hollywood-Hills.ttf.woff') format('woff'), url('../fonts/SF-Hollywood-Hills.ttf.svg#SF-Hollywood-Hills') format('svg')
   font-weight: 2em
   font-style: normal
   font-stretch: normal
 
 @font-face
   font-family: 'scriptina'
-  src: url('../fonts/scriptin-webfont.eot')
-  src: url('../fonts/scriptin-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/scriptin-webfont.woff') format('woff'), url('../fonts/scriptin-webfont.ttf') format('truetype'), url('../fonts/scriptin-webfont.svg#scriptinaregular') format('svg')
+  src: url('/fonts/scriptin-webfont.eot')
+  src: url('/fonts/scriptin-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/scriptin-webfont.woff') format('woff'), url('../fonts/scriptin-webfont.ttf') format('truetype'), url('../fonts/scriptin-webfont.svg#scriptinaregular') format('svg')
   font-weight: normal
   font-style: normal
 
@@ -24,7 +24,7 @@ body, html /// take all available height
   min-height: 100%
   background-size: cover
   width: 100%
-  background: #000000 url("../img/gato_flugzeug_webshop.jpg") center fixed
+  background: #000000 url("/img/gato_flugzeug_webshop.jpg") center fixed
   background-size: cover
   position: relative
   padding: 0 0 100px 0
@@ -32,7 +32,7 @@ body, html /// take all available height
   .logo
     font-family: 'scriptina'
     position: absolute
-    right: 14%
+    right: 10%
     top: 200px
     font-size: 50px
     color: black
@@ -53,13 +53,12 @@ body, html /// take all available height
     //text-shadow: 0 0 5px black
 
 
-ul.nav-tabs
+ul.navtabs
   text-align: right
   padding: 2.5% 40px
   display: block
   background-color: #000000
-  margin-bottom: 50px
-  margin-top: 0
+  margin: 0 0 50px 0
   li
     font-size: 35px
     font-family: 'SF-Hollywood-Hills'
@@ -93,7 +92,7 @@ figure
     text-shadow: 0 0 5px black
     font-size: 37px
 
-.news, .termine
+.background-box
   margin: 50px
   padding: 20px
   background-color: rgba(76, 29, 17, 0.4)
@@ -129,7 +128,7 @@ figure
 
   .header
     position: relative
-    background: url("../img/shop-header.png")
+    background: url("/img/shop-header.png")
     width: 533px
     height: 401px
 
@@ -162,19 +161,19 @@ figure
 
     .line
       padding-bottom: 5px
-      background: url("../img/input-line.png") repeat-x bottom
+      background: url("/img/input-line.png") repeat-x bottom
 
       label
         display: inline-block
         width: 81px
 
-    span.label.label-danger
-      font-family: 'Exo 2', sans-serif
-      font-size: 14px
-      border-radius: 0
-      &.break:after
-        content: "\A"
-        white-space: pre
+span.label.label-danger
+  font-family: 'Exo 2', sans-serif
+  font-size: 14px
+  border-radius: 0
+  &.break:after
+    content: "\A"
+    white-space: pre
 
 
 

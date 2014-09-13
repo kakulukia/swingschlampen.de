@@ -51,7 +51,7 @@
                     <div class="shirt" ng-repeat="shirt in shirts">
                         <img src="img/{{shirt}}.jpg" alt=""/>
                         <label>{{$index + 1}}</label>
-                        <input type="number" name="{{shirt}}" ng-model="fields[shirt]"/>
+                        <input type="number" min="0" max="50" name="{{shirt}}" ng-model="fields[shirt]"/>
                     </div>
                 </div>
 
@@ -61,6 +61,9 @@
                 <div style="clear: both"></div>
 
                 Text für: es kann ein bisschen dauern ..
+
+                <p ng-show="sent" class="label label-success">Deine Bestellung wurde versendet.</p>
+                <p ng-show="send_error" class="label label-danger">Problem beim Versand :(</p>
 
             </form>
         </div>

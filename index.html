@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <title>SwingSchlampen</title>
     <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
 </head>
 <body>
 
-    <div ng-app="page" class="container-fluid page">
+    <div ng-app="page" class="page">
         <tabset>
             <tab title="Home" template-url="views/home.html"></tab>
             <tab title="News" template-url="views/news.html"></tab>
             <tab title="Termine" template-url="views/termine.html"></tab>
             <tab title="Band" template-url="views/band.html"></tab>
-            <tab title="Shop" template-url="views/shop.html"></tab>
-            <tab title="Kontakt" template-url="views/kontakt.html"></tab>
+            <!--<tab title="Shop" template-url="views/shop.html"></tab>-->
+            <!--<tab title="Kontakt" template-url="views/kontakt.html"></tab>-->
             <tab title="Presse" template-url="views/presse.html"></tab>
         </tabset>
     </div>
 
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="js/directives/tabset.js"></script>
     <script src="js/app.js"></script>

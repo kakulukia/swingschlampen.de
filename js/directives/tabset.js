@@ -6,7 +6,7 @@ angular.module('bootstrap.tabset', [])
             restrict: 'E',
             replace: true,
             transclude: true,
-            controller: function($scope) {
+            controller: function($scope, $location) {
                 $scope.templateUrl = '';
                 var tabs = $scope.tabs = [];
                 var controller = this;
@@ -16,6 +16,7 @@ angular.module('bootstrap.tabset', [])
                         tab.selected = false;
                     });
                     tab.selected = true;
+                    $location.path(tab.title);
                 };
 
                 this.setTabTemplate = function (templateUrl) {
@@ -23,8 +24,15 @@ angular.module('bootstrap.tabset', [])
                 }
 
                 this.addTab = function (tab) {
-                    if (tabs.length == 0) {
-                        controller.selectTab(tab);
+                    if ($location.path() != '') {
+                        if ('/' + tab.title == $location.path()){
+                            controller.selectTab(tab);
+                        }
+                    }
+                    else {
+                        if (tabs.length == 0 || '/' + tab.title == $location.path()) {
+                            controller.selectTab(tab);
+                        }
                     }
                     tabs.push(tab);
                 };
@@ -32,7 +40,7 @@ angular.module('bootstrap.tabset', [])
             template:
                 '<div class="row-fluid">' +
                 '<div class="row-fluid">' +
-                '<ul class="nav nav-tabs" ng-transclude></ul>' +
+                '<ul class="navtabs" ng-transclude></ul>' +
                 '</div>' +
                 '<div class="row-fluid">' +
                 '<ng-include src="templateUrl">' +
