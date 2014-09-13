@@ -93,7 +93,8 @@ figure {
     font-size: 35px;
     font-family: "SF-Hollywood-Hills";
     color: whitesmoke;
-    margin-top: 0; }
+    margin-top: 0;
+    color: darkred; }
   .background-box label {
     width: 150px;
     display: inline-block;
@@ -103,6 +104,14 @@ figure {
 
 .termine h2 {
   margin-top: 50px; }
+
+span.label.label-danger {
+  font-family: "Exo 2", sans-serif;
+  font-size: 14px;
+  border-radius: 0; }
+  span.label.label-danger.break:after {
+    content: "\A";
+    white-space: pre; }
 
 .shop {
   width: 533px;
@@ -135,38 +144,36 @@ figure {
     .shop .form #zip_code {
       width: 90px; }
     .shop .form #city {
-      width: 214px; }
+      width: 205px; }
     .shop .form .line {
       padding-bottom: 5px;
       background: url("/img/input-line.png") repeat-x bottom; }
       .shop .form .line label {
         display: inline-block;
-        width: 81px; }
-
-span.label.label-danger {
-  font-family: "Exo 2", sans-serif;
-  font-size: 14px;
-  border-radius: 0; }
-  span.label.label-danger.break:after {
-    content: "\A";
-    white-space: pre; }
-    span.label.label-danger.break:after .shirt {
+        width: 81px;
+        font-size: 30px; }
+    .shop .form .shirt {
       position: relative;
       display: inline-block;
       width: 220px;
       margin-right: 25px;
       text-align: center; }
-      span.label.label-danger.break:after .shirt label {
+      .shop .form .shirt label {
         position: absolute;
         top: 5px;
         left: 15px; }
-      span.label.label-danger.break:after .shirt input {
+      .shop .form .shirt input {
         border: 3px solid #001839;
         position: absolute;
         top: 5px;
         right: 0px;
         width: 50px; }
-    span.label.label-danger.break:after button {
+    .shop .form .message.label {
+      font-size: 18px;
+      font-family: "Exo 2", sans-serif;
+      font-weight: normal; }
+    .shop .form button {
+      margin-top: 20px;
       background: #001839;
       border: none;
       border-radius: 7px;
@@ -176,6 +183,8 @@ span.label.label-danger {
       font-size: 30px;
       float: right;
       cursor: pointer; }
+    .shop .form .reminder {
+      font-size: 18px; }
 
 li.flyout {
   position: relative; }
@@ -189,6 +198,22 @@ li.flyout {
     background-color: black;
     padding: 0;
     border: 3px solid white; }
+
+#contact {
+  width: 600px;
+  margin: 50px auto; }
+  #contact .input-group {
+    margin: 10px 0;
+    width: 100%; }
+    #contact .input-group span {
+      width: 77px;
+      font-family: "Exo 2", sans-serif;
+      border-radius: 4px 0 0 4px; }
+  #contact textarea {
+    border-radius: 4px;
+    width: 100%; }
+  #contact button {
+    float: right; }
 
 label {
   display: inline; }

@@ -56,14 +56,22 @@
                 </div>
 
                 <div id="messages" class="alert alert-success" ng-show="messages" ng-bind="messages"></div>
+
+
+                <p class="reminder">
+                    Bitte habe Verständnis dafür, dass wir eventuell nicht alle Artikel auf Lagen haben und die
+                    Bestellung deswegen etwas dauern könnte.
+                </p>
+
+                <p ng-show="sent" class="message label label-success">
+                    Vielen Dank für deine Bestellung!
+                    Wir melden uns bei Dir zum weiteren Ablauf!.
+                </p>
+                <p ng-show="send_error" class="message label label-danger">Problem beim Versand :(</p>
+
                 <button ng-click="submit(shirtForm)" class="btn btn-default">Bestellen</button>
 
                 <div style="clear: both"></div>
-
-                Text für: es kann ein bisschen dauern ..
-
-                <p ng-show="sent" class="label label-success">Deine Bestellung wurde versendet.</p>
-                <p ng-show="send_error" class="label label-danger">Problem beim Versand :(</p>
 
             </form>
         </div>

@@ -26,7 +26,8 @@ var transporter = nodemailer.createTransport({
 });
 
 
-app.use(express.static(__dirname + '/'));
+app.use(express.static(__dirname + '/assets'));
+app.use(express.static(__dirname + '/bower_components'));
 
 
 app.post('/send-mail', function(req, res) {

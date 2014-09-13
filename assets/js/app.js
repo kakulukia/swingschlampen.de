@@ -32,7 +32,7 @@ angular.module('page', ['bootstrap.tabset'])
                 $http({
                     method: 'POST',
                     url: '/send-mail',
-                    data: $.param({message: message, subject: 'Kontakt'}),
+                    data: $.param({message: message, subject: 'Bestellung'}),
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }).success(function() {
                     $scope.sent = true;

@@ -1,0 +1,40 @@
+<div class="background-box" id="contact">
+
+    <h2>Kontakt mit den SwingSchlampen</h2>
+
+    <div ng-controller="contactCtrl">
+
+
+        <form class="form-horizontal form" name="contactForm" novalidate role="form">
+
+            Nur zu, schreib uns, was du auf dem Herzen hast!
+
+            <div class="input-group">
+                <span class="label label-danger break" ng-show="submitted && contactForm.name.$error.required">erforderlich!</span>
+                <span class="input-group-addon">Name</span>
+                <input type="text" class="form-control" name="name" ng-model="fields.name">
+            </div>
+
+            <div class="input-group">
+                <span class="label label-danger break" ng-show="submitted && contactForm.email.$error.required">erforderlich!</span>
+                <span class="input-group-addon">eMail</span>
+                <input type="text" class="form-control" name="email" ng-model="fields.email">
+            </div>
+
+            <div class="input-group">
+                <span class="label label-danger break" ng-show="submitted && contactForm.message.$error.required">erforderlich!</span>
+                <textarea type="text" class="form-control"
+                          name="message" ng-model="fields.message" rows="7"></textarea>
+            </div>
+            <fieldset>
+
+            <p ng-show="sent" class="label label-success">Danke für deine Nachricht!<br/><br/></p>
+            <p ng-show="send_error" class="label label-danger">Problem beim Versand :(<br/><br/></p>
+
+            <button ng-click="submit(contactForm)" class="btn btn-default">Absenden</button>
+
+            <div style="clear: both"></div>
+
+        </form>
+    </div>
+</div>
