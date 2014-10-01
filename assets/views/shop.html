@@ -49,9 +49,10 @@
                 Motive: <br/>
                 <div class="shirts">
                     <div class="shirt" ng-repeat="shirt in shirts">
-                        <img src="img/{{shirt}}.jpg" alt=""/>
+                        <img src="img/{{shirt.name}}.jpg" alt=""/>
                         <label>{{$index + 1}}</label>
-                        <input type="number" min="0" max="50" name="{{shirt}}" ng-model="fields[shirt]"/>
+                        <span class="price-tag">{{ shirt.price }}</span>
+                        <input type="number" min="0" max="50" name="{{shirt.name}}" ng-model="fields[shirt.name]"/>
                     </div>
                 </div>
 

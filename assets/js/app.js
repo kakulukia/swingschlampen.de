@@ -2,11 +2,12 @@
 angular.module('page', ['bootstrap.tabset'])
     .controller('storeCtrl', function ($scope, $http) {
         $scope.shirts = [
-            'shirt-flugzeugschwarz',
-            'shirt-flugzeugblauweiss',
-            'shirt-hubschrauber',
-            'shirt-micro',
-            'shirt-logo'];
+            {'name': 'shirt-flugzeugschwarz', 'price': '30,- €'},
+            {'name': 'shirt-flugzeugblauweiss', 'price': '30,- €'},
+            {'name': 'shirt-hubschrauber', 'price': '30,- €'},
+            {'name': 'shirt-micro', 'price': '30,- €'},
+            {'name': 'shirt-logo', 'price': '15,- €'},
+        ];
         $scope.fields = {}; // initialize form fields
 
         // Form submit handler.
