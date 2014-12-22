@@ -57,7 +57,13 @@ app.post('/send-mail', function(req, res) {
 
 app.use('/images', function(req, res, next){
     var images = '';
-    var dir_listing = fs.readdirSync('assets/fotos');
+    var photos_dir = __dirname + '/assets/fotos';
+    console.log(photos_dir);
+    try {
+        var dir_listing = fs.readdirSync(photos_dir);
+    } catch (e){
+        console.log(e);
+    }
 
     _(dir_listing).forEach(function(image) {
         if (_(image).contains('.jpg')){
