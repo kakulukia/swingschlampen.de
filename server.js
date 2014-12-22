@@ -1,5 +1,7 @@
 var express = require('express');
 var app = express();
+var fs = require('fs');
+var _ = require('lodash');
 
 var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({
@@ -20,8 +22,8 @@ var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-        user: 'kakulukia@gmail.com',
-        pass: 'mni2639'
+        user: 'swingschlamps@gmail.com',
+        pass: 'wenndumagst'
     }
 });
 
@@ -31,12 +33,12 @@ app.use(express.static(__dirname + '/bower_components'));
 
 
 app.post('/send-mail', function(req, res) {
-    console.log(req.body.message);
+    console.log(req.body);
 
     // setup e-mail data with unicode symbols
     var mailOptions = {
-        from: 'SwingSchlampen.de <andy@freilandkiwis.de>', // sender address
-        to: 'andy@freilandkiwis.de', // list of receivers
+        from: req.body.from, // sender address
+        to: 'swingschlamps@gmail.com', // list of receivers
         subject: req.body.subject,
         text: req.body.message
     };
@@ -53,7 +55,18 @@ app.post('/send-mail', function(req, res) {
     res.send('done!');
 });
 
+app.use('/images', function(req, res, next){
+    var images = '';
+    var dir_listing = fs.readdirSync('assets/fotos');
 
+    _(dir_listing).forEach(function(image) {
+        if (_(image).contains('.jpg')){
+            images += '<img class="lazy" data-original="/fotos/' + image + '" height="600px"/>';
+        }
+
+    });
+    res.send(images);
+});
 
 
 var server = app.listen(3000, function() {

@@ -1,0 +1,21 @@
+<div id="carousel">
+    <div id="container">
+        <div id="images">
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        $("#images").load('/images', function(){
+            $("img.lazy").lazyload({
+                effect: "fadeIn",
+                threshold : 200,
+                container: $('#carousel'),
+                height: '600px'
+            });
+            $('#container').css('width', $('#images').width()+500);
+        });
+    });
+</script>

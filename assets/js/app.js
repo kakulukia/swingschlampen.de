@@ -71,23 +71,23 @@ angular.module('page', ['bootstrap.tabset'])
             }
             else {
 
-                var message = '';
-
-                angular.forEach($scope.fields, function(value, key) {
-                    console.log(key+value);
-                    message += key + ': ' + value + '\n';
-                    $scope.fields[key] = '';
-                });
-
                 $http({
                     method: 'POST',
                     url: '/send-mail',
-                    data: $.param({message: message, subject: 'Kontakt'}),
+                    data: $.param({
+                        from: 'SwingSchlampen.de Kontaktanfrage <' + $scope.fields.email + '>',
+                        subject: 'Kontakt',
+                        message: $scope.fields.name + ' (' + $scope.fields.email + ') schreibt: \n\n' + $scope.fields.message
+                    }),
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }).success(function() {
                     $scope.sent = true;
                     $scope.send_error = false;
                     $scope.submitted = false;
+
+                    //angular.forEach($scope.fields, function(value, key) {
+                    //    $scope.fields[key] = '';
+                    //});
                 }).error(function() {
                     $scope.sent = false;
                     $scope.send_error = true;
