@@ -76,7 +76,7 @@ app.use('/images', function(req, res, next){
 app.post('/save_events', function(req, res){
 
     if (req.body.password == secret){
-        fs.writeFile("assets/termine.json", JSON.stringify(req.body.termine, null, 4), function(err) {
+        fs.writeFile(__dirname + "/assets/termine.json", JSON.stringify(req.body.termine, null, 4), function(err) {
             if(err) {
                 console.log(err);
             } else {
