@@ -1,18 +1,10 @@
 [
     {
-        "month": "neuer Monat",
+        "month": "April 2015",
         "events": [
             {
-                "date": "erster termin",
-                "name": "mal wieder .."
-            },
-            {
-                "date": "neuer Termin",
-                "name": "watt issn da los?"
-            },
-            {
-                "date": "wieder ein Terminse",
-                "name": "watt sn da los?"
+                "date": "30. April",
+                "name": "Altberliner Biersalong 21:00 Uhr"
             }
         ]
     }
