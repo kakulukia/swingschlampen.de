@@ -2,7 +2,7 @@
   font-family: 'SF-Hollywood-Hills'
   src: url('/fonts/SF-Hollywood-Hills.ttf.eot')
   src: url('/fonts/SF-Hollywood-Hills.ttf.eot?#iefix') format('embedded-opentype'), url('/fonts/SF-Hollywood-Hills.ttf.woff') format('woff'), url('/fonts/SF-Hollywood-Hills.ttf.svg#SF-Hollywood-Hills') format('svg')
-  font-weight: 2em
+  font-weight: bold
   font-style: normal
   font-stretch: normal
 
@@ -28,6 +28,7 @@ body, html /// take all available height
   background-size: cover
   position: relative
   padding: 0 0 100px 0
+  color: white
 
   .logo
     font-family: 'scriptina'
@@ -99,6 +100,7 @@ figure
   color: floralwhite
   font-family: 'Exo 2', sans-serif
   position: relative
+  font-size: 16px
 
   h2
     font-size: 35px
@@ -107,15 +109,69 @@ figure
     margin-top: 0
     color: darkred
 
-  label
-    width: 150px
-    display: inline-block
-    border-right: 2px solid darkred
-    margin-right: 10px
-    font-family: 'Mr De Haviland', cursive
 
-.termine h2
-  margin-top: 50px
+
+
+
+.as-sortable-placeholder
+  background: darkred
+  opacity: 0.5
+
+.termine, .as-sortable-item
+
+  .label
+    padding: 0
+
+  input
+    background: none
+    border: none
+    box-sizing: border-box
+
+  h2
+    margin-top: 50px
+
+    input
+      width: 212px
+
+  .plus, .minus
+    cursor: pointer
+
+  .table
+    display: table
+
+    input
+      width: 100%
+
+  .cell
+    display: table-cell
+    position: relative
+
+    &.label
+      width: 248px
+      padding-right: 17px
+      font-family: 'SF-Hollywood-Hills', cursive
+      font-size: 24px
+      input
+        border-right: 2px solid darkred
+
+    .delete
+      display: none
+      font-size: 18px
+      font-weight: normal
+      position: absolute
+      top: -8px
+      right: 22px
+      font-family: "Courier New", courier, monospace
+    &:hover
+      .delete
+        display: block
+
+  .edit_me
+    margin-top: 77px
+    width: 50px
+
+
+
 
 span.label.label-danger
   font-family: 'Exo 2', sans-serif

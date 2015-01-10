@@ -1,13 +1,12 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
 var fs = require('fs');
 var _ = require('lodash');
 
-var bodyParser = require('body-parser')
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
-
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+var secret = 'swings';
 
 // simple logger
 app.use(function(req, res, next){
@@ -72,6 +71,30 @@ app.use('/images', function(req, res, next){
 
     });
     res.send(images);
+});
+
+app.post('/save_events', function(req, res){
+
+    if (req.body.password == secret){
+        fs.writeFile("assets/termine.json", JSON.stringify(req.body.termine, null, 4), function(err) {
+            if(err) {
+                console.log(err);
+            } else {
+                console.log("The file was saved!");
+            }
+        });
+        res.send('saved');
+    }
+    else {
+        res.send('nope');
+    }
+});
+
+app.use('/check_password', function(req, res){
+    if (req.body.password == secret){
+        res.send('ok');
+    }
+    res.send('nope');
 });
 
 

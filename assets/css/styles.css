@@ -3,7 +3,7 @@
   font-family: "SF-Hollywood-Hills";
   src: url("/fonts/SF-Hollywood-Hills.ttf.eot");
   src: url("/fonts/SF-Hollywood-Hills.ttf.eot?#iefix") format("embedded-opentype"), url("/fonts/SF-Hollywood-Hills.ttf.woff") format("woff"), url("/fonts/SF-Hollywood-Hills.ttf.svg#SF-Hollywood-Hills") format("svg");
-  font-weight: 2em;
+  font-weight: bold;
   font-style: normal;
   font-stretch: normal; }
 @font-face {
@@ -24,7 +24,8 @@ body, html {
   background: #000000 url("/img/gato_flugzeug_webshop.jpg") center fixed;
   background-size: cover;
   position: relative;
-  padding: 0 0 100px 0; }
+  padding: 0 0 100px 0;
+  color: white; }
   .page .logo {
     font-family: "scriptina";
     position: absolute;
@@ -87,22 +88,58 @@ figure {
   background-color: rgba(76, 29, 17, 0.4);
   color: floralwhite;
   font-family: "Exo 2", sans-serif;
-  position: relative; }
+  position: relative;
+  font-size: 16px; }
   .background-box h2 {
     font-size: 35px;
     font-family: "SF-Hollywood-Hills";
     color: #f5f5f5;
     margin-top: 0;
     color: darkred; }
-  .background-box label {
-    width: 150px;
-    display: inline-block;
-    border-right: 2px solid darkred;
-    margin-right: 10px;
-    font-family: "Mr De Haviland", cursive; }
 
-.termine h2 {
+.as-sortable-placeholder {
+  background: darkred;
+  opacity: 0.5; }
+
+.termine .label, .as-sortable-item .label {
+  padding: 0; }
+.termine input, .as-sortable-item input {
+  background: none;
+  border: none;
+  box-sizing: border-box; }
+.termine h2, .as-sortable-item h2 {
   margin-top: 50px; }
+  .termine h2 input, .as-sortable-item h2 input {
+    width: 212px; }
+.termine .plus, .termine .minus, .as-sortable-item .plus, .as-sortable-item .minus {
+  cursor: pointer; }
+.termine .table, .as-sortable-item .table {
+  display: table; }
+  .termine .table input, .as-sortable-item .table input {
+    width: 100%; }
+.termine .cell, .as-sortable-item .cell {
+  display: table-cell;
+  position: relative; }
+  .termine .cell.label, .as-sortable-item .cell.label {
+    width: 248px;
+    padding-right: 17px;
+    font-family: "SF-Hollywood-Hills", cursive;
+    font-size: 24px; }
+    .termine .cell.label input, .as-sortable-item .cell.label input {
+      border-right: 2px solid darkred; }
+  .termine .cell .delete, .as-sortable-item .cell .delete {
+    display: none;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    top: -8px;
+    right: 22px;
+    font-family: "Courier New", courier, monospace; }
+  .termine .cell:hover .delete, .as-sortable-item .cell:hover .delete {
+    display: block; }
+.termine .edit_me, .as-sortable-item .edit_me {
+  margin-top: 77px;
+  width: 50px; }
 
 span.label.label-danger {
   font-family: "Exo 2", sans-serif;

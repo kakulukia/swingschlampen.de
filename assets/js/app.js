@@ -1,5 +1,5 @@
 
-angular.module('page', ['bootstrap.tabset'])
+angular.module('page', ['ui.sortable', 'bootstrap.tabset', 'ngLodash'])
     .controller('storeCtrl', function ($scope, $http) {
         $scope.shirts = [
             {'name': 'shirt-flugzeugschwarz', 'price': '30,- €'},
@@ -79,7 +79,7 @@ angular.module('page', ['bootstrap.tabset'])
                         subject: 'Kontakt',
                         message: $scope.fields.name + ' (' + $scope.fields.email + ') schreibt: \n\n' + $scope.fields.message
                     }),
-                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                    headers: {'Content-Type': 'application/json'}
                 }).success(function() {
                     $scope.sent = true;
                     $scope.send_error = false;
@@ -95,4 +95,80 @@ angular.module('page', ['bootstrap.tabset'])
                 });
             }
         };
+    })
+    .controller('eventCtrl', function($scope, $http, lodash){
+        $scope.termine = [];
+        $scope.editable = false;
+
+        $http.get('termine.json')
+            .then(function(res){
+                $scope.termine = res.data;
+            });
+
+        $scope.more = function(){
+            $scope.termine.push({
+                "month": "neuer Monat",
+                "events": [{
+                    "date": "neuer Termin",
+                    "name": "watt issn da los?"
+                }]
+            });
+            $scope.save();
+        };
+
+        $scope.remove = function(entry){
+            lodash.remove($scope.termine, entry);
+            $scope.save();
+        };
+
+        $scope.delete_event = function(event_list, event){
+            lodash.remove(event_list, event);
+            $scope.save();
+        };
+
+        $scope.add_event = function(events){
+            events.push({
+                "date": "neuer Termin",
+                "name": "watt issn da los?"
+            });
+            $scope.save();
+        };
+
+        $scope.save = function(){
+            if ($scope.editable) {
+                $http({
+                    url: '/save_events',
+                    method: "POST",
+                    data: {termine: $scope.termine, password: $scope.password},
+                    headers: {'Content-Type': 'application/json'}
+                });
+
+            }
+        };
+
+        $scope.dragControlListeners = {
+            itemMoved: function (event) {
+                $scope.save();
+            },
+            orderChanged: function(event) {
+                $scope.save();
+            }
+        };
+
+        $scope.edit_me = function(){
+
+            if ($scope.editable) return
+
+            $http({
+                url: '/check_password',
+                method: "POST",
+                data: {password: $scope.password},
+                headers: {'Content-Type': 'application/json'}
+            }).success(function(data, status, headers, config) {
+                if (data == 'ok'){
+                    $scope.editable = true;
+                }
+            });
+        };
+
     });

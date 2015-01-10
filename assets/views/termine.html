@@ -1,25 +1,32 @@
 
 
-<div class="background-box termine">
+<div class="background-box termine" ng-controller="eventCtrl">
 
-    <h2>AUGUST  2014</h2>
-    <label>30. August</label> US car Classics, Schloß Diedersdorf,
-    Spielbeginn: 20.00 Uhr, Ende 21.30 bzw. 22.00 Uhr <br/>
+    <div ng-repeat="entry in termine">
+        <h2>
+            <input type="text" ng-model="entry.month" ng-blur="save()" ng-disabled="!editable"/>
+            <span class="minus" ng-click="remove(entry)" ng-show="editable">-</span>
+        </h2>
 
-    <h2>SEPTEMBER 2014</h2>
-    <label>05. September</label> MUSIC WEEK, O2 world <br/>
-    <label>06./07. September</label> Flugplatzfest Gatow, Luftwaffenmuseum
-    Spielbeginn: 14.00 bis 15.00 & 17.00 bis 18.00 Uhr <br/>
-    <label>10. September</label> Privatparty Ballhaus Berlin <br/>
-    <label>13. September</label> Kommunenfest, privat <br/>
-    <label>29. September</label> Möbelhaus Fröhlich, bei Dresden <br/>
-    <br/>
+        <div as-sortable="dragControlListeners" ng-model="entry.events" is-disabled="!editable">
+            <div ng-repeat="event in entry.events" as-sortable-item class="as-sortable-item">
+                <div as-sortable-item-handle class="as-sortable-item-handle table">
+                    <div class="cell label">
+                        <input type="text" ng-model="event.date" ng-blur="save()" ng-disabled="!editable"/>
+                        <span class="delete" ng-click="delete_event(entry.events, event)"
+                              ng-show="editable" ng-disabled="!editable">x</span>
+                    </div>
+                    <div class="cell">
+                        <input type="text" ng-model="event.name" ng-blur="save()" ng-disabled="!editable"/>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <h2>OKTOBER 2014</h2>
-    <label>09. Oktober</label> Kudamm, Alt Berliner Kneipe <br/>
-    <label>19. Oktober</label> SO36 Café Fatal - ca. 21.00 Uhr <br/>
+        <span class="plus" ng-click="add_event(entry.events)" ng-show="editable">noch watt ..</span>
+    </div>
 
-    <h2>DEZEMBER 2014</h2>
-    <label>6. Dezember</label> Samstag,  Rockhaus… <br/>
-    <label>18.Dezember</label> Gatow Weihnachtsfeier <br/>
+
+    <h2 ng-show="editable"><span class="plus" ng-click="more()">+</span></h2>
+    <input class="edit_me" type="password" ng-change="edit_me()" ng-model="password"/>
 </div>

@@ -1,0 +1,19 @@
+[
+    {
+        "month": "neuer Monat",
+        "events": [
+            {
+                "date": "erster termin",
+                "name": "mal wieder .."
+            },
+            {
+                "date": "neuer Termin",
+                "name": "watt issn da los?"
+            },
+            {
+                "date": "wieder ein Terminse",
+                "name": "watt sn da los?"
+            }
+        ]
+    }
+]
