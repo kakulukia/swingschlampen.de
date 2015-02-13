@@ -33,8 +33,8 @@ angular.module('page', ['ui.sortable', 'bootstrap.tabset', 'ngLodash'])
                 $http({
                     method: 'POST',
                     url: '/send-mail',
-                    data: $.param({message: message, subject: 'Bestellung'}),
-                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                    data: {message: message, subject: 'Bestellung'},
+                    headers: {'Content-Type': 'application/json'}
                 }).success(function() {
                     $scope.sent = true;
                     $scope.send_error = false;
@@ -74,11 +74,11 @@ angular.module('page', ['ui.sortable', 'bootstrap.tabset', 'ngLodash'])
                 $http({
                     method: 'POST',
                     url: '/send-mail',
-                    data: $.param({
+                    data: {
                         from: 'SwingSchlampen.de Kontaktanfrage <' + $scope.fields.email + '>',
                         subject: 'Kontakt',
                         message: $scope.fields.name + ' (' + $scope.fields.email + ') schreibt: \n\n' + $scope.fields.message
-                    }),
+                    },
                     headers: {'Content-Type': 'application/json'}
                 }).success(function() {
                     $scope.sent = true;
