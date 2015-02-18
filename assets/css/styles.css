@@ -57,6 +57,23 @@ ul.navtabs {
     font-family: "SF-Hollywood-Hills";
     display: inline-block;
     margin: 0 10px; }
+    ul.navtabs li.menu {
+      position: relative; }
+      ul.navtabs li.menu ul {
+        display: none;
+        position: absolute;
+        left: -10px;
+        top: 66px;
+        padding: 0;
+        z-index: 7;
+        text-align: left; }
+        ul.navtabs li.menu ul li {
+          list-style-type: none;
+          background: black;
+          margin: 0;
+          padding: 0 10px; }
+      ul.navtabs li.menu:hover ul {
+        display: inline-block; }
     ul.navtabs li a {
       color: #f5f5f5;
       text-decoration: none; }
@@ -90,12 +107,15 @@ figure {
   font-family: "Exo 2", sans-serif;
   position: relative;
   font-size: 16px; }
-  .background-box h2 {
+  .background-box h2, .background-box h1 {
     font-size: 35px;
     font-family: "SF-Hollywood-Hills";
     color: #f5f5f5;
     margin-top: 0;
     color: darkred; }
+
+strong {
+  color: darkred; }
 
 .as-sortable-placeholder {
   background: darkred;
