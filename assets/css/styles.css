@@ -130,7 +130,7 @@ strong {
 .termine h2, .as-sortable-item h2 {
   margin-top: 50px; }
   .termine h2 input, .as-sortable-item h2 input {
-    width: 212px; }
+    width: 240px; }
 .termine .plus, .termine .minus, .as-sortable-item .plus, .as-sortable-item .minus {
   cursor: pointer; }
 .termine .table, .as-sortable-item .table {
