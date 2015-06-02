@@ -3,10 +3,10 @@ var bodyParser = require('body-parser');
 var app = express();
 var fs = require('fs');
 var _ = require('lodash');
+var secrets = require('./secrets.json');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-var secret = 'swings';
 
 // simple logger
 app.use(function(req, res, next){
@@ -22,7 +22,7 @@ var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
         user: 'swingschlamps@gmail.com',
-        pass: 'wenndumagst'
+        pass: secrets.gmail_password
     }
 });
 
@@ -75,7 +75,7 @@ app.use('/images', function(req, res, next){
 
 app.post('/save_events', function(req, res){
 
-    if (req.body.password == secret){
+    if (req.body.password == secrets.appointment_password){
         fs.writeFile(__dirname + "/assets/termine.json", JSON.stringify(req.body.termine, null, 4), function(err) {
             if(err) {
                 console.log(err);
@@ -91,7 +91,7 @@ app.post('/save_events', function(req, res){
 });
 
 app.use('/check_password', function(req, res){
-    if (req.body.password == secret){
+    if (req.body.password == secrets.appointment_password){
         res.send('ok');
     }
     res.send('nope');
