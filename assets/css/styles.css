@@ -87,10 +87,17 @@ figure {
   text-align: center;
   position: relative; }
   figure img {
-    border: 20px solid #0a0a0a;
-    background-color: whitesmoke;
-    padding: 4px; }
-  figure figcaption {
+    margin-top: 1em; }
+
+figure img, .richtext-image {
+  border: 20px solid #0a0a0a;
+  background-color: whitesmoke;
+  padding: 4px; }
+  figure img.right, .richtext-image.right {
+    float: right; }
+  figure img.left, .richtext-image.left {
+    float: left; }
+  figure img figcaption, .richtext-image figcaption {
     text-align: center;
     position: relative;
     bottom: 125px;
