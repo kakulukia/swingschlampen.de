@@ -182,7 +182,7 @@ angular.module('page', ['ui.sortable', 'bootstrap.tabset', 'ngLodash', 'ngSaniti
                     $scope.news.push({
                         "title": item.title,
                         "richtext": $sce.trustAsHtml(item.richtext),
-                        "image": $sce.trustAsHtml(item.image.replace('src="/media/images', 'src="//pepperz.de:8000/media/images')),
+                        "image": $sce.trustAsHtml(item.image),
                         "caption": item.caption
                     });
                 });
