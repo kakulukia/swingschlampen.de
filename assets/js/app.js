@@ -1,5 +1,5 @@
 
-angular.module('page', ['ui.sortable', 'bootstrap.tabset', 'ngLodash'])
+angular.module('page', ['ui.sortable', 'bootstrap.tabset', 'ngLodash', 'ngSanitize'])
     .controller('storeCtrl', function ($scope, $http) {
         $scope.shirts = [
             {'name': 'shirt-flugzeugschwarz', 'price': '30,- €'},
@@ -171,4 +171,22 @@ angular.module('page', ['ui.sortable', 'bootstrap.tabset', 'ngLodash'])
             });
         };
 
+    })
+    .controller('newsCtrl', function($scope, $http, lodash, $sce){
+        $scope.news = [];
+        $scope.testerei = $sce.trustAsHtml('<div>testerei eins zwei drei</div>');
+
+        $http.get('//swingschlampen.de/admin/v1/posts/?format=json')
+            .then(function(res){
+                lodash.forEach(res.data.results, function(item) {
+                    $scope.news.push({
+                        "title": item.title,
+                        "richtext": $sce.trustAsHtml(item.richtext),
+                        "image": $sce.trustAsHtml(item.image.replace('src="/media/images', 'src="//pepperz.de:8000/media/images')),
+                        "caption": item.caption
+                    });
+                });
+            });
+
     });
+
