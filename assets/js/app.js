@@ -176,7 +176,7 @@ angular.module('page', ['ui.sortable', 'bootstrap.tabset', 'ngLodash', 'ngSaniti
         $scope.news = [];
         $scope.testerei = $sce.trustAsHtml('<div>testerei eins zwei drei</div>');
 
-        $http.get('//swingschlampen.de/admin/v1/posts/?format=json')
+        $http.get('//admin.swingschlampen.de/v1/posts/?format=json')
             .then(function(res){
                 lodash.forEach(res.data.results, function(item) {
                     $scope.news.push({
